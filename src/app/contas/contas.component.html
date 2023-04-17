@@ -1,0 +1,93 @@
+<div class="main-content">
+    <div class="content-fluid">
+        <div class="card mb-0 rounded-0" style="padding:40px;">
+
+        <div class="card-header card-custom-top">
+            <h5 class="align-middle text-dark">
+                Cadastrar nova conta
+            </h5>
+        </div>
+        <form [formGroup]="formGroup">
+            <div class="row">
+                <div class="col-12 col-md-4" style="padding-left:6px !important">
+                    <div class="form-group">
+                        <label class="form-required">
+                            <small>Agência</small>
+                        </label>
+                        <input type="text" class="form-control" formControlName="Agencia">
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group">
+                        <label class="form-required">
+                            <small>Número da Conta</small>
+                        </label>
+                        <input type="text" class="form-control" formControlName="Numero">
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group">
+                        <label class="form-required">
+                            <small>Saldo</small>
+                        </label>
+                        <input type="number" class="form-control" formControlName="Saldo">
+                    </div>
+                </div>
+                <div class="col-12 col-md-12">
+                    <div class="form-group">
+                        <label class="form-required">
+                            <small>Cliente</small>
+                        </label>
+                        <input type="text" class="form-control" formControlName="Cliente">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-danger btn-sm float-right" (click)="create(formGroup.value)">
+                        <i class="fa fa-check"></i>
+                        Salvar
+                    </button>
+                    <a class="btn btn-secondary btn-sm float-right mr-1" style="margin-left:10px;" (click)="cleanFormInputs()">
+                        <i class="fa fa-times"></i>
+                        Cancelar
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="content-fluid">
+        <div class="card mb-0 rounded-0" style="padding:40px;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Agência</th>
+                        <th>Conta</th>
+                        <th>Saldo</th>
+                        <th>Cliente</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let conta of contasList" class="table_tr_hover">
+                        <td>{{conta.agencia}}</td>
+                        <td>{{conta.numero}}</td>
+                        <td>{{conta.saldo}}</td>
+                        <td>{{conta.cliente}}</td>
+                        <td class="d-flex flex-nowrap">
+                            <button type="button" class="btn btn-primary btn-sm m-1" style="margin-right:10px;" (click)="editItem(conta)">
+                                <i class="fa fa-pencil" style="font-size: 20px;"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm m-1" (click)="deleteItem(conta)">
+                                <i class="fa fa-trash" style="font-size: 20px;"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
