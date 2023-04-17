@@ -18,7 +18,7 @@ Execute `ng b` para compilar o projeto. Os artefatos de construção serão arma
 ## Lembrar de executar o `npm install` ao baixar o repositório.
 ___
 #### Resumo
-Neste projeto Angular podemos ver o front-end de um exemplo gerado através do Admin LTE e alterado para a avaliação. Neste exemplo podemos ver os dois primeiros conceitos do CRUD, o "Create" e o "Read" implementados de forma simplificada.
+Neste projeto Angular temos um front-end como exemplo gerado através do Admin LTE e alterado para a avaliação. Neste exemplo podemos ver os dois primeiros conceitos do CRUD, o "Create" e o "Read" implementados de forma simplificada.
 
 
 ### Fique a vontade para implementar qualquer melhoria tanto em funcionalidades como na estruturação dos projetos. 
