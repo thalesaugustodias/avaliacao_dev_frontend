@@ -20,6 +20,7 @@ ___
 #### Resumo
 Neste projeto Angular temos um front-end como exemplo gerado através do Admin LTE e alterado para a avaliação. Neste exemplo podemos ver os dois primeiros conceitos do CRUD, o "Create" e o "Read" implementados de forma simplificada.
 
+- Crie uma branch com seu nome e boa sorte!
 
 ### Fique a vontade para implementar qualquer melhoria tanto em funcionalidades como na estruturação dos projetos. 
 ### Qualquer mudança será avaliada.
