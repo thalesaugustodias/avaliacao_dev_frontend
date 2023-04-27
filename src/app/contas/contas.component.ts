@@ -84,13 +84,35 @@ export class ContasComponent implements OnInit {
       });
   }
 
-  public deleteItem(conta): void {
-    Swal.fire({
+  public deleteItem(id:number): void {
+    this.contasService.delete(id).subscribe((response: Response) => {
+      if (!response.hasErrors) {
+        Swal.fire({
+          title: 'Atenção',
+          text: 'Conta deletada com sucesso.',
+          icon: 'success',
+          showCancelButton: false
+        });
+        this.cleanFormInputs();
+        this.getAll();
+      }
+      else {
+        Swal.fire({
+          title: 'Atenção',
+          text: 'Ocorreu um erro ao tentar deletar a conta.\n' + response.message,
+          icon: 'warning',
+          showCancelButton: false
+        });
+      }
+    }, (error) => {
+      Swal.fire({
         title: 'Atenção',
-        text: 'Funcionalidade ainda não implementada',
-        icon: 'warning',
+        text: 'Ocorreu um erro ao deletar a conta.\n' + error.message,
+        icon: 'error',
         showCancelButton: false
       });
+      console.log(error);
+    })
   }
   
   public cleanFormInputs(): void {
