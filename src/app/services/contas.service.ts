@@ -25,7 +25,7 @@ export class ContasService {
     public getById(id: string): Observable<Response> {
         return this.http.get<Response>(`${this.URL}/${id}`);
     }
-    public update(id: number, request: any): Observable<Response> {
+    public update(id:number, request: Response): Observable<Response> {
         return this.http.put<Response>(`${this.URL}/${id}`, request);
     }
     public delete(id: number): Observable<{}> {
