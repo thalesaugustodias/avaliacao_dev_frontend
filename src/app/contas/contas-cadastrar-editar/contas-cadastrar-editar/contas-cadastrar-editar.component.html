@@ -1,0 +1,64 @@
+<div class="main-content">
+    <div class="content-fluid">
+        <div class="card mb-0 rounded-0" style="padding:40px;">
+            <div class="card-header card-custom-top">
+                <h5 class="align-middle text-dark">
+                   {{(contas.collections && contas.collections.id)?'Editar Contar':'Cadastrar Uma Nova Conta'}}
+                </h5>
+                <form class="form-padrao" [formGroup]="formGroup">
+                   
+                    <div class="row">
+                        <div class="col-12 col-md-4" style="padding-left:6px !important">
+                            <div class="form-group">
+                                <label class="form-required">
+                                    <small>Agência</small>
+                                </label>
+                                <input type="text" class="form-control" formControlName="Agencia">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="form-group">
+                                <label class="form-required">
+                                    <small>Número da Conta</small>
+                                </label>
+                                <input type="text" class="form-control" formControlName="Numero">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="form-group">
+                                <label class="form-required">
+                                    <small>Saldo</small>
+                                </label>
+                                <input type="number" class="form-control" formControlName="Saldo">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12">
+                            <div class="form-group">
+                                <label class="form-required">
+                                    <small>Cliente</small>
+                                </label>
+                                <input type="text" class="form-control" formControlName="Cliente">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>            
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-danger btn-sm float-right"
+                            (click)="save(formGroup.value)" [disabled]="!formGroup.valid" (ngSubmit)="formGroup.valid && save(formGroup.value)">
+                            <i class="fa fa-check"></i>
+                            Salvar
+                        </button>
+                        <a class="btn btn-secondary btn-sm float-right mr-1" style="margin-left:10px;"
+                            (click)="cleanFormInputs()" routerLink="/contas">
+                            <i class="fa fa-times"></i>
+                            Cancelar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
